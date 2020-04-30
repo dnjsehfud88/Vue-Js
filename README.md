@@ -78,6 +78,23 @@ export default {
 3. frontend 폴더에서 npm install vue-router --save 로 Vue 라우터 패키지 설치
 4. frontend/src폴더에 routes 폴더 생성
 5. index.js 파일 생성
+```
+import Vue from 'vue'
+import Router from 'vue-router'
+import Index from '@/components/World'
+
+Vue.use(Router)
+export const router = new Router({
+ mode: 'history',
+ routes: [
+   {
+     path: '/',
+     name: 'index',
+     component: Index
+   }
+ ]
+})
+```
 6. frontend/src/app.vue에 <router-view> 요소를 추가해준다
 ```
 <template>
