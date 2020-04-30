@@ -6,19 +6,19 @@
 <script>
 
 export default {
-  created () {
+    created () {
            
-    this.$http.get('/api/worlds')
-        .then((response) => {
-          setTimeout(() => {
-            this.name = response.data.name
-          }, 2000);          
+        this.$http.get('/api/worlds')
+            .then((response) => {
+            setTimeout(() => {
+                this.name = response.data.name
+            }, 2000);          
         });
-  },
-  data () {
-    return {
-      name: "world"   
+    },
+    data () {
+        return {
+            name: "world"   
+        }
     }
-  },
 }
 </script>

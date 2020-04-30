@@ -6,10 +6,10 @@ Vue.use(Router)
 export const router = new Router({
  mode: 'history',
  routes: [
-   {
-     path: '/',
-     name: 'index',
-     component: Index
-   }
+    {
+        path: '/',
+        name: 'index',
+        component: Index
+    }
  ]
 })
