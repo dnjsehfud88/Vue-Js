@@ -113,7 +113,7 @@ export default {
 ```
 3. frontend 폴더에서 Vue 라우터 패키지 설치
 ```bash
-yarn add vue-router --save
+yarn add vue-router
 ```
 4. frontend/src폴더에 routes 폴더 생성
 5. index.js 파일 생성
@@ -144,7 +144,7 @@ export const router = new Router({
 ```
 7. axios 패키지 설치
 ```bash
-yarn add axios --save 
+yarn add axios
 ```
 8. frontend/src/main.js를 아래와 같이 수정해 준다.
 ```javascript
