@@ -21,7 +21,7 @@
 ## 프론트 엔드 백엔드 연동
 1. frontend 폴더에 vue.config.js 파일 생성
 2. 아래 내용을 입력한다
-```
+```javascript
 module.exports = { 
     devServer: {
       proxy: { 
@@ -44,7 +44,7 @@ module.exports = {
 
 ## 라우터 설정 및 Hello World 출력
 1. backend/routes 폴더 내부에 world.js파일 생성
-```
+```javascript
 const express = require('express');
 const router = express.Router();
 
@@ -55,7 +55,7 @@ router.get('/', function (req, res, next) {
 module.exports = router;
 ```
 2. frontend/src/components 폴더 내부에 World.vue 생성
-```
+``` javascript
 <template>
   <div class="wrap">
     <h1>Hello, {{ name }}</h1>
@@ -78,7 +78,7 @@ export default {
 3. frontend 폴더에서 npm install vue-router --save 로 Vue 라우터 패키지 설치
 4. frontend/src폴더에 routes 폴더 생성
 5. index.js 파일 생성
-```
+``` javascript
 import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '@/components/World'
@@ -96,7 +96,7 @@ export const router = new Router({
 })
 ```
 6. frontend/src/app.vue에 <router-view> 요소를 추가해준다
-```
+```javascript
 <template>
   <div id="app">
     <router-view></router-view>
@@ -105,7 +105,7 @@ export const router = new Router({
 ```
 7. npm install axios --save -> axios 패키지 설치
 8. frontend/src/main.js를 아래와 같이 수정해 준다.
-```
+```javascript
 import Vue from 'vue'
 import App from './App.vue'
 import {router}  from './routes/index.js'
@@ -124,7 +124,7 @@ new Vue({
 
 ## Hello World -> Hello John 변경
 1. backend/routes/world.js 수정
-```
+```javascript
 const express = require('express');
 const router = express.Router();
 
@@ -135,7 +135,7 @@ router.get('/', function (req, res, next) {
 module.exports = router;
 ```
 2. frontend/src/components/World.vue 수정 
-```
+```javascript
 <template>
   <div class="wrap">
     <h1>Hello, {{ name }}</h1>
