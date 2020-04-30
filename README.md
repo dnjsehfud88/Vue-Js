@@ -8,7 +8,7 @@ npm install -g yarn
 ```
 2. vue/cli 설치
 ```bash
-yarn install -g @vue/cli
+yarn global add @vue/cli
 ```
 3. frontend 폴더 생성
 ```bash
@@ -28,7 +28,7 @@ yarn serve
 ### 환경 설정 
 1. express-generator 설치
 ```bash
-yarn install -g express-generator
+yarn global add express-generator
 ```
 2. backend폴더 생성
 ```bash
@@ -40,7 +40,10 @@ cd backend
 ```
 4. yarn 설치
 yarn install
-5. npm start -> 백엔드 서버 실행
+5. 백엔드 서버 실행
+```bash
+yarn start
+```
 6. http://localhost:3000 -> 접속 후 구동 확인
 
 ## 프론트 엔드 백엔드 연동
@@ -108,7 +111,7 @@ export default {
 ```
 3. frontend 폴더에서 Vue 라우터 패키지 설치
 ```bash
-yarn install vue-router --save
+yarn add vue-router --save
 ```
 4. frontend/src폴더에 routes 폴더 생성
 5. index.js 파일 생성
@@ -139,7 +142,7 @@ export const router = new Router({
 ```
 7. axios 패키지 설치
 ```bash
-yarn install axios --save 
+yarn add axios --save 
 ```
 8. frontend/src/main.js를 아래와 같이 수정해 준다.
 ```javascript
@@ -177,9 +180,9 @@ module.exports = router;
 2. frontend/src/components/World.vue 수정 
 ```javascript
 <template>
-  <div class="wrap">
-    <h1>Hello, {{ name }}</h1>
-  </div>
+    <div class="wrap">
+        <h1>Hello, {{ name }}</h1>
+    </div>
 </template>
 <script>
 
@@ -202,9 +205,9 @@ export default {
 </script>
 ```
 1. yarn 서버 실행 VSCode 디버그 모드로 backend 서버 실행
-   ```bash
-   yarn serve
-   ```
+```bash
+yarn serve
+```
 2. http://localhost:8080 접속해서 결과 확인
 3. frontend에서 yarn build로 서버 빌드해서 백앤드만 실행해서 결과 확인
 ```bash 
