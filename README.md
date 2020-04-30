@@ -70,10 +70,7 @@ cd frontend
 ```bash
 yarn build
 ```
-3. backend 폴더로 이동
-```bash
-cd backend
-```
+3. backend 폴더로 이동 (워크스페이스에서)
 4. public 폴더 내부에 favicon.ico과 index.html폴더가 있다면 성공
 
 ## 라우터 설정 및 Hello World 출력
