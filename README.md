@@ -39,7 +39,9 @@ express --view=ejs backend
 cd backend
 ```
 4. yarn 설치
+```bash
 yarn install
+```
 5. 백엔드 서버 실행
 ```bash
 yarn start
