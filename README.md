@@ -219,9 +219,18 @@ yarn build
 4. http://localhost:3000에 접속해서 확인
 
 ## 홈페이지 틀 제작
-1. index.html파일 타이틀 내용 수정 및 고정
-```html
-<title>World</title>
+1. App.vue 파일 수정(페이지가 바뀌어도 바뀌지 않는 요소)
+```javascript
+<template>
+    <v-app id="app">
+        <h1>HI!</h1>
+        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
+        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
+        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
+        //라우터 뷰 외부의 요소는 고정된다
+        <router-view></router-view>     
+    </v-app>
+</template>
 ```
 2. Main, Login, Sign.vue 파일 생성
 ```javascript
@@ -229,27 +238,18 @@ yarn build
 <template>
     <div class="wrap">
         <h1>메인 페이지</h1>
-        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
-        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
-        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
     </div>
 </template>
 //로그인
 <template>
     <div class="wrap">
         <h1>로그인</h1>
-        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
-        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
-        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
     </div>
 </template>
 //회원가입
 <template>
     <div class="wrap">
         <h1>회원가입</h1>
-        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
-        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
-        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
     </div>
 </template>
 ```
@@ -294,7 +294,6 @@ yarn serve
 6. http://localhost:8080 접속 후 확인
 
 ## Vutify 설정 및 세팅
-
 1. frontend 폴더로 이동
 ```bash
 cd frontend
@@ -340,9 +339,13 @@ export const router = new Router({
 5. app.vue 수정
 ```javascript
 <template>
-  <v-app id="app">
-    <router-view></router-view>
-  </v-app>
+    <v-app id="app">
+        <h1>HI!</h1>
+        <router-link :to="{ name: 'index' }" class="link"><v-btn color="success">메인</v-btn></router-link>
+        <router-link :to="{ name: 'sign' }" class="link"><v-btn color="error">회원가입</v-btn></router-link>
+        <router-link :to="{ name: 'login' }" class="link"><v-btn color="info">로그인</v-btn></router-link>
+        <router-view></router-view>
+    </v-app>
 </template>
 ```
 6. Main, Login, Sign.vue 파일 수정
@@ -351,27 +354,18 @@ export const router = new Router({
 <template>
     <v-content class="wrap">
         <h1>Main Page</h1>
-        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
-        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
-        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
     </v-content>
 </template>
 //로그인
 <template>
     <v-content class="wrap">
         <h1>로그인</h1>
-        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
-        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
-        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
     </v-content>
 </template>
 //회원가입
 <template>
     <v-content class="wrap">
         <h1>회원가입</h1>
-        <router-link :to="{ name: 'index' }" class="link">메인</router-link><br/>
-        <router-link :to="{ name: 'sign' }" class="link">회원가입</router-link><br/>
-        <router-link :to="{ name: 'login' }" class="link">로그인</router-link>
     </v-content>
 </template>
 ```
