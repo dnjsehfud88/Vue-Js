@@ -1,9 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Vuetify from 'vuetify'
-import Index from '@/components/Main'
-import login from '@/components/Login'
-import sign from '@/components/Sign'
+import Index from '@/views/Main'
+import Login from '@/views/Login'
+import Sign from '@/views/Sign'
 import 'vuetify/dist/vuetify.min.css'
 
 Vue.use(Vuetify)
@@ -19,12 +19,12 @@ export const router = new Router({
      {
         path: '/login',
         name: 'login',
-        component: login
+        component: Login
       },
       {
         path: '/sign',
         name: 'sign',
-        component: sign
+        component: Sign
       }
  ]
 })

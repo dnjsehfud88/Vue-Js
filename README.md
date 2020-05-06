@@ -370,3 +370,51 @@ export const router = new Router({
 </template>
 ```
 7. http://localhost:8080 접속 후 확인
+
+## 툴바 컴포넌트화
+1. src/component 폴더에 ToolBar.vue 파일 생성
+```javascript
+<template>
+<nav>
+    <v-toolbar flat height="60px">
+        <v-toolbar-title>
+            <h1>HI!</h1>
+        </v-toolbar-title>
+        <v-toolbar-items style="margin-left: auto;">
+            <v-btn :to="{ name: 'index' }" flat exact>메인페이지</v-btn>
+            <v-btn :to="{ name: 'sign' }" flat>회원가입</v-btn>
+            <v-btn :to="{ name: 'login' }" flat>로그인</v-btn>
+        </v-toolbar-items>
+    </v-toolbar>
+</nav>
+</template>
+```
+2. app.vue 수정
+```javascript
+<template>
+    <v-app id="app">
+        <toolbar />
+        <v-content>
+            <router-view></router-view>
+        </v-content>
+    </v-app>
+</template>
+<script>
+import toolbar from "./components/ToolBar"
+
+export default {
+
+  name: 'App',
+  components:{ toolbar },
+  data () {
+    return {
+      //
+    }
+  }
+}
+</script>
+```
+3. 서버 실행해서 확인
+```bash
+yarn serve
+```
